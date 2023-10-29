@@ -1,0 +1,52 @@
+/* created using https://www.realtimecolors.com/?colors=ffffff-020304-08bbf7-22161d-0ae665&fonts=Baloo%20Da%202-Open%20Sans */
+
+@import url('https://fonts.googleapis.com/css?family=Baloo Da 2:700|Open Sans:400');
+
+body {
+	font-family: 'Open Sans';
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Baloo Da 2';
+	font-weight: 700;
+}
+
+html {
+	font-size: 100%;
+} /* 16px */
+
+h1 {
+	font-size: 5.652rem; /* 90.4px */
+}
+
+h2 {
+	font-size: 3.997rem; /* 64px */
+}
+
+h3 {
+	font-size: 2.827rem; /* 45.28px */
+}
+
+h4 {
+	font-size: 1.999rem; /* 32px */
+}
+
+h5 {
+	font-size: 1.414rem; /* 22.56px */
+}
+
+small {
+	font-size: 0.707rem; /* 11.36px */
+}
+
+/* end of realtimecolors.com generated */
+
+p {
+	text-wrap: wrap;
+	line-height: 1.4;
+}

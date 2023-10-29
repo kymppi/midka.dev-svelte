@@ -1,0 +1,28 @@
+@import 'links';
+@import 'typography';
+@import 'colors';
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 4rem 1rem;
+	min-height: 100vh;
+	gap: 2rem;
+
+	background-color: $background;
+	color: $light;
+
+	> * {
+		max-width: 32rem;
+	}
+}
+
+section {
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
