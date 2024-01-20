@@ -1,4 +1,5 @@
 <script lang="ts">
+	import JsonViewer from "$components/JSONViewer.svelte";
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -22,5 +23,5 @@
 
 <section>
 	<h2>Last FM</h2>
-	<pre>{JSON.stringify(data, null, 2)}</pre>
+	<JsonViewer jsonData={data} />	
 </section>
