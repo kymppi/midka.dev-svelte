@@ -1,0 +1,7 @@
+{
+	"javascript.preferences.importModuleSpecifier": "non-relative",
+	"svelte.enable-ts-plugin": true,
+	"workbench.editor.labelFormat": "short",
+	"explorer.sortOrder": "default",
+	"typescript.preferences.importModuleSpecifier": "non-relative"
+}

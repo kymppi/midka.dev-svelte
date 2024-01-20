@@ -1,3 +1,9 @@
+<script lang="ts">
+	import type { PageData } from "./$types";
+
+	export let data: PageData;
+</script>
+
 <svelte:head>
 	<title>home | midka.dev</title>
 </svelte:head>
@@ -12,4 +18,9 @@
 	<h2>about me</h2>
 	I have many hobbies including programming, music, photography and some sports. I usually play badminton,
 	floorball and basketball. I also like to play video games.
+</section>
+
+<section>
+	<h2>Last FM</h2>
+	<pre>{JSON.stringify(data, null, 2)}</pre>
 </section>
