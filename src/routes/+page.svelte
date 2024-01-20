@@ -1,5 +1,6 @@
 <script lang="ts">
 	import JsonViewer from "$components/JSONViewer.svelte";
+	import LastFmWidget from "$components/LastFMWidget.svelte";
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -19,6 +20,10 @@
 	<h2>about me</h2>
 	I have many hobbies including programming, music, photography and some sports. I usually play badminton,
 	floorball and basketball. I also like to play video games.
+</section>
+
+<section>
+	<LastFmWidget tracks={data.props.tracks} />
 </section>
 
 <section>

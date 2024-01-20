@@ -120,3 +120,57 @@ export class LastFMClient {
 		return await response.json();
 	}
 }
+
+export type CombinedTrack = Omit<LastFMTrack, 'date' | 'currentlyPlaying'> & {
+	image: LastFMImage[];
+	album: LastFMAlbum;
+	date?: Date;
+	currentlyPlaying?: boolean;
+};
+
+const PLACEHOLDER_IMAGE = (px: number) => `https://via.placeholder.com/${px}x${px}`;
+
+export function combineTracks(tracks: LastFMTrack[]): CombinedTrack {
+	const [first, second] = tracks.slice(0, 2);
+
+	const tracksMatch = first.name === second.name;
+
+	const newTrack = {
+		...first
+	};
+
+	if (newTrack.image[0].uri == '') {
+		if (second && tracksMatch && second.image[0].uri != '') {
+			newTrack.image = second.image;
+		} else {
+			newTrack.image = [
+				{
+					size: 'small',
+					uri: PLACEHOLDER_IMAGE(34)
+				},
+				{
+					size: 'medium',
+					uri: PLACEHOLDER_IMAGE(64)
+				},
+				{
+					size: 'large',
+					uri: PLACEHOLDER_IMAGE(174)
+				},
+				{
+					size: 'extralarge',
+					uri: PLACEHOLDER_IMAGE(300)
+				}
+			];
+		}
+	}
+
+	if (newTrack.album.name == '') {
+		if (second && tracksMatch) {
+			newTrack.album = second.album;
+		} else {
+			newTrack.album = { mbid: '', name: 'Unknown' };
+		}
+	}
+
+	return newTrack;
+}
