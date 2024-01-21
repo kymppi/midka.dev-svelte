@@ -3,7 +3,6 @@
 
 	export let label = 'Information';
 	export let description = 'Additional information';
-	export let className = '';
 
 	const dispatch = createEventDispatcher();
 
@@ -41,8 +40,8 @@
 </div>
 
 <style>
-  svg {
-    width: var(--size);
-    height: var(--size);
-  }
+	svg {
+		width: var(--size);
+		height: var(--size);
+	}
 </style>
