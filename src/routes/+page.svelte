@@ -1,7 +1,7 @@
 <script lang="ts">
-	import JsonViewer from "$components/JSONViewer.svelte";
-	import LastFmWidget from "$components/LastFMWidget.svelte";
-	import type { PageData } from "./$types";
+	import JsonViewer from '$components/JSONViewer.svelte';
+	import LastFmWidget from '$components/LastFMWidget.svelte';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
@@ -28,5 +28,5 @@
 
 <section>
 	<h2>Last FM</h2>
-	<JsonViewer jsonData={data} />	
+	<JsonViewer jsonData={data} />
 </section>

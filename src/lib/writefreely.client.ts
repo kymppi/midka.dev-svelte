@@ -27,7 +27,10 @@ export interface WriteFreelyCollection {
 }
 
 export class WriteFreelyClient {
-	constructor(private readonly instance: string, private readonly collection: string) {}
+	constructor(
+		private readonly instance: string,
+		private readonly collection: string
+	) {}
 
 	public async getPosts(): Promise<WriteFreelyPost[]> {
 		const collection = await this.fetch<WriteFreelyCollection>(

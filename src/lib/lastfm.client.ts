@@ -52,7 +52,10 @@ export interface LastFMImage {
 }
 
 export class LastFMClient {
-	constructor(private readonly apiKey: string, private readonly user: string) {}
+	constructor(
+		private readonly apiKey: string,
+		private readonly user: string
+	) {}
 
 	public async getRecentTracks(limit?: number): Promise<LastFMRecentTracks> {
 		const { recenttracks } = (await this.fetch(

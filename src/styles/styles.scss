@@ -27,72 +27,14 @@ section {
 	justify-content: center;
 }
 
-.lastfm-widget {
-	// debug
-	border: 1px solid $light;
-	padding: 0.5rem 0.75rem;
-
-	display: flex;
-	gap: 0.75rem;
-	align-items: center;
-	height: 9rem;
-
-	.lastfm-widget__info {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		width: max-content;
-	}
-
-	.lastfm-widget__info__name {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
-
-	.lastfm-widget__info__actions {
-		display: flex;
-		gap: 0.5rem;
-		height: auto;
-		max-height: 40px;
-
-		> * {
-			height: auto;
-			width: auto;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 0.5rem;
-
-			background-color: $light;
-			color: $background;
-			padding: 0.5rem 0.75rem;
-
-			transition: all 0.2s ease-in-out;
-
-			// fixes elements moving when hovered
-			border: 1px solid transparent;
-
-			&:nth-child(1) {
-				background-color: $primary;
-
-				&:hover {
-					background-color: transparent;
-					border: 1px solid $primary;
-					color: $light;
-				}
-			}
-
-			&:hover {
-				background-color: transparent;
-				border: 1px solid $light;
-				color: $light;
-			}
-		}
-	}
-
-	> img {
-		object-fit: contain;
-		height: 120px;
-	}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
