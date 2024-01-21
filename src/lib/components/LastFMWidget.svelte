@@ -3,10 +3,26 @@
 	import InfoSquareIcon from '$components/InfoSquareIcon.svelte';
 	import { env } from '$env/dynamic/public';
 	import { combineTracks, type LastFMRecentTracks } from '$lib/lastfm.client';
+	import { onMount } from 'svelte';
 
 	export let tracks: LastFMRecentTracks;
 
 	const track = combineTracks(tracks.tracks);
+
+	const dialogId = 'lastfm-widget-info-dialog';
+	let dialog: HTMLDialogElement;
+
+	onMount(() => {
+		dialog = document.getElementById(dialogId) as HTMLDialogElement;
+	});
+
+	$: if (dialog) {
+		dialog.addEventListener('click', (e) => {
+			if (e.target === dialog) {
+				dialog.close();
+			}
+		});
+	}
 </script>
 
 <section aria-label="last.fm recently listened to" class="container">
@@ -34,14 +50,53 @@
 			<InfoSquareIcon
 				label="Last.FM Widget"
 				description="shows my recently listened to track & info about it"
-				on:click={() => alert('clicked')}
+				on:click={() => (dialog.open ? dialog.close() : dialog.show())}
 			/>
+			<dialog id={dialogId}>
+				<div>
+					<p>
+						This widget shows the song which I recently listened to and scrobbled with last.fm.<br
+						/>
+						Sometimes there can be issues with the photos. last.fm API issue :/
+					</p>
+					<p>Currently listening: {track.currentlyPlaying}</p>
+					<p>Date: {track.currentlyPlaying ? 'right now' : track.date}</p>
+					<button on:click={() => dialog.close()}>close</button>
+				</div>
+			</dialog>
 		</div>
 	</div>
 </section>
 
 <style lang="scss">
 	@use '../../styles/colors.scss' as *;
+
+	dialog {
+		width: max-content;
+		> div {
+			display: flex;
+			gap: 0.5rem;
+			flex-direction: column;
+
+			> button {
+				transition: all 0.2s ease-in-out;
+				background-color: $background;
+				color: $light;
+				padding: 0.5rem 0.75rem;
+				border: 2px solid transparent;
+				font-size: 1rem;
+
+				width: max-content;
+
+				&:hover,
+				&:focus {
+					background-color: transparent;
+					border: 2px solid $background;
+					color: $background;
+				}
+			}
+		}
+	}
 
 	img {
 		object-fit: contain;
