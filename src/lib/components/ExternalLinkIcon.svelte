@@ -9,6 +9,7 @@
 	fill="none"
 	stroke-linecap="round"
 	stroke-linejoin="round"
+	aria-label="external link icon"
 >
 	<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 	<path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />

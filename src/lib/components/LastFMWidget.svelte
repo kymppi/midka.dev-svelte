@@ -9,7 +9,7 @@
 	const track = combineTracks(tracks.tracks);
 </script>
 
-<div aria-label="last.fm recently listened to" class="container">
+<section aria-label="last.fm recently listened to" class="container">
 	<h2>Recently listened to</h2>
 	<div class="content-container">
 		<img src={track.image[2].uri} alt={`Cover image for ${track.name}`} />
@@ -38,7 +38,7 @@
 			/>
 		</div>
 	</div>
-</div>
+</section>
 
 <style lang="scss">
 	@use '../../styles/colors.scss' as *;
