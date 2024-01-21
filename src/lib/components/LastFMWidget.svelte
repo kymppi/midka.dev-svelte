@@ -15,14 +15,6 @@
 	onMount(() => {
 		dialog = document.getElementById(dialogId) as HTMLDialogElement;
 	});
-
-	$: if (dialog) {
-		dialog.addEventListener('click', (e) => {
-			if (e.target === dialog) {
-				dialog.close();
-			}
-		});
-	}
 </script>
 
 <section aria-label="last.fm recently listened to" class="container">
@@ -52,7 +44,7 @@
 				description="shows my recently listened to track & info about it"
 				on:click={() => (dialog.open ? dialog.close() : dialog.show())}
 			/>
-			<dialog id={dialogId}>
+			<dialog id={dialogId} aria-label="info icon text container">
 				<div>
 					<p>
 						This widget shows the song which I recently listened to and scrobbled with last.fm.<br
