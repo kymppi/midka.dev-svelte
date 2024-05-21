@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$components/Button.svelte';
+	import LastFmWidget from '$components/LastFMWidget.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -16,12 +17,11 @@
 	<h2>I'm Midka.<br /> A teenager who likes to do stuff.</h2>
 	<div class="navigation-buttons">
 		<Button>About me</Button>
-		<a href="https://i11l.blog/midka">
-			<Button>Blog</Button>
-		</a>
+		<Button>Blog</Button>
 		<Button>Projects</Button>
 		<Button>Contact</Button>
 	</div>
+	<LastFmWidget tracks={data.props.tracks} />
 	<!-- <p>teen who likes to help others</p> -->
 	<!-- <a href="https://www.google.com/maps/place/Helsinki"> @ Helsinki, Finland </a> -->
 </section>

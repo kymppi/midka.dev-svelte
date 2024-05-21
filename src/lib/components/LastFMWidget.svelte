@@ -42,7 +42,12 @@
 			<InfoSquareIcon
 				label="Last.FM Widget"
 				description="shows my recently listened to track & info about it"
-				on:click={() => (dialog.open ? dialog.close() : dialog.show())}
+				on:click={() =>
+					dialog.open
+						? dialog.close()
+						: window.innerWidth < 1665
+							? dialog.showModal()
+							: dialog.show()}
 			/>
 			<dialog id={dialogId} aria-label="info icon text container">
 				<div>
@@ -62,6 +67,10 @@
 
 <style lang="scss">
 	@use '../../styles/colors.scss' as *;
+
+	h2 {
+		margin-right: 3.25rem;
+	}
 
 	dialog {
 		width: max-content;
@@ -90,16 +99,23 @@
 		}
 	}
 
+	@media (max-width: 400px) {
+		h2 {
+			margin-right: 2rem;
+		}
+
+		.actions {
+			flex-direction: column;
+		}
+	}
+
 	img {
 		object-fit: contain;
 		height: 125px;
 	}
 
 	.container {
-		position: absolute;
-		top: 2rem;
-		left: 2rem;
-
+		position: relative;
 		border: 1px solid $light;
 		padding: 0.5rem 0.75rem;
 
@@ -119,6 +135,12 @@
 		gap: 0.75rem;
 	}
 
+	@media (max-width: 529px) {
+		.content-container {
+			flex-direction: column;
+		}
+	}
+
 	.info {
 		display: flex;
 		flex-direction: column;
@@ -136,7 +158,6 @@
 		display: flex;
 		gap: 0.5rem;
 		height: auto;
-		max-height: 40px;
 
 		> * {
 			height: auto;
@@ -145,6 +166,7 @@
 			align-items: center;
 			justify-content: space-between;
 			gap: 0.5rem;
+			max-height: 40px;
 
 			background-color: $light;
 			color: $background;
