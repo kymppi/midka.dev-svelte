@@ -69,4 +69,10 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
+
+	@media (max-width: 400px) {
+		.navigation-buttons {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
