@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$components/Button.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -14,22 +15,12 @@
 	<h1>Welcome!</h1>
 	<h2>I'm Midka.<br /> A teenager who likes to do stuff.</h2>
 	<div class="navigation-buttons">
-		<div class="button-wrapper">
-			<span>About me</span>
-			<button>About me</button>
-		</div>
-		<div class="button-wrapper">
-			<span>Blog</span>
-			<button>Blog</button>
-		</div>
-		<div class="button-wrapper">
-			<span>Projects</span>
-			<button>Projects</button>
-		</div>
-		<div class="button-wrapper">
-			<span>Contact</span>
-			<button>Contact</button>
-		</div>
+		<Button>About me</Button>
+		<a href="https://i11l.blog/midka">
+			<Button>Blog</Button>
+		</a>
+		<Button>Projects</Button>
+		<Button>Contact</Button>
 	</div>
 	<!-- <p>teen who likes to help others</p> -->
 	<!-- <a href="https://www.google.com/maps/place/Helsinki"> @ Helsinki, Finland </a> -->

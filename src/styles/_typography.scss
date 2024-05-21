@@ -1,50 +1,50 @@
-/* created using https://www.realtimecolors.com/?colors=ffffff-020304-08bbf7-22161d-0ae665&fonts=Baloo%20Da%202-Open%20Sans */
-
-body {
-	font-family: 'Oxygen';
-	font-weight: 400;
-}
-
-h1 {
-	font-family: 'PT Sans';
-	font-weight: 700;
-	font-style: normal;
-}
-
-h2,
-h3,
-h4,
-h5 {
-	font-family: 'Oxygen';
-	font-weight: 700;
-}
+/* created using https://www.realtimecolors.com/?colors=ffffff-0203104-08bbf7-22161d-0ae665&fonts=Baloo%20Da%202-Open%20Sans */
 
 html {
 	font-size: 100%;
 }
 
+body {
+	font-family: 'Oxygen';
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'PT Sans';
+	font-weight: 700;
+}
+
+html {
+	font-size: 100%;
+} /* 16px */
+
 h1 {
-	font-size: 5.625em;
+	font-size: 4.21rem; /* 67.36px */
 }
 
 h2 {
-	font-size: 2.5em; /* 64px */
+	font-size: 3.158rem; /* 50.56px */
 }
 
 h3 {
-	font-size: 2.827rem; /* 45.28px */
+	font-size: 2.369rem; /* 37.92px */
 }
 
 h4 {
-	font-size: 1.999rem; /* 32px */
+	font-size: 1.777rem; /* 28.48px */
 }
 
 h5 {
-	font-size: 1.414rem; /* 22.56px */
+	font-size: 1.333rem; /* 21.28px */
 }
 
 small {
-	font-size: 0.707rem; /* 11.36px */
+	font-size: 0.75rem; /* 12px */
 }
 
 /* end of realtimecolors.com generated */
@@ -52,10 +52,4 @@ small {
 p {
 	text-wrap: wrap;
 	line-height: 1.4;
-}
-
-@media (max-width: 400px) {
-	h1 {
-		font-size: 5.25em;
-	}
 }
