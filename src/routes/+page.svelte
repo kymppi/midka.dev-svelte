@@ -12,7 +12,7 @@
 
 <section class="general">
 	<h1>Welcome!</h1>
-	<h2>I'm Midka. The creator of this site.</h2>
+	<h2>I'm Midka.<br /> A teenager who likes to do stuff.</h2>
 	<div class="navigation-buttons">
 		<div class="button-wrapper">
 			<span>About me</span>
@@ -57,13 +57,16 @@
 	}
 
 	.navigation-buttons {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
 		width: 100%;
 		gap: 1rem;
-		justify-content: space-between;
+		// justify-content: space-between;
+	}
 
-		> button {
-			font-size: 2em;
+	@media (max-width: 1000px) {
+		.navigation-buttons {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 </style>
