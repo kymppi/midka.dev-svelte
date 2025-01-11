@@ -21,7 +21,7 @@
 		<Button>Projects</Button>
 		<Button>Contact</Button>
 	</div>
-	<LastFmWidget tracks={data.props.tracks} />
+	<!-- <LastFmWidget tracks={data.props.tracks} /> -->
 	<!-- <p>teen who likes to help others</p> -->
 	<!-- <a href="https://www.google.com/maps/place/Helsinki"> @ Helsinki, Finland </a> -->
 </section>
